@@ -1,7 +1,7 @@
 public class Solution {
     public long[] solution(int x, int n) {
         long[] answer = new long[n];
-        long tmp = 0;
+        int tmp = 0;
         if (x >= -10000000  || x <= 10000000  || n < 1000)
         {
             
