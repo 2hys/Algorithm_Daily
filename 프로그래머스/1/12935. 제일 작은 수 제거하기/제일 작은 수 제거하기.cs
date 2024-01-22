@@ -1,18 +1,34 @@
-using System.Collections.Generic;
-using System.Linq;
 using System;
 
 public class Solution {
     public int[] solution(int[] arr) {
-        List<int> arr_list = new List<int>(arr);
-        int min = arr.Min();
-        if (arr_list.Count == 1)
+        int[] answer = new int[arr.Length];
+        int[] tmp1 = arr;
+        int tmp2;
+        if (arr.Length < 2)
         {
-            arr_list.RemoveAll(num => num == min);
-            arr_list.Add(-1);
-            return arr_list.ToArray();
+            answer[0] = -1;
+            return answer;
         }
-        arr_list.RemoveAll(num => num == min);
-        return arr_list.ToArray();
+        //4 3 2 1 -> 4 3 2
+        //4 1 3 2 -> 4 3 2 
+        for (int i = 0; i < arr.Length; i++)
+        {
+            Console.WriteLine(arr[i]);
+        }
+        Array.Sort(tmp1);
+        tmp2 = tmp1[0];
+        for (int i = 0; i < arr.Length; i++)
+        {
+            Console.WriteLine(arr[i]);
+        }
+        for (int i = 0; i < arr.Length; i++)
+        {
+            // if (arr[i] == tmp2)
+            //     i++;
+            answer[i] = arr[i];
+        }
+        
+        return answer;
     }
 }
